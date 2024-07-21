@@ -52,6 +52,18 @@ public class calCulate
     }
 
 
+      // Check if the number is within the valid range (0 to 30)
+      while (lastYearInt < 0 || lastYearInt > 30)
+      {
+          Console.Write("Invalid number. Please enter a number between 0 and 30 (inclusive):");
+          lastYear = Console.ReadLine();
+          // Since the number is invalid, we need to repeat the TryParse again.
+          while (!int.TryParse(lastYear, out lastYearInt))
+          {
+              Console.Write("Sorry, that's not a number, try again:");
+              lastYear = Console.ReadLine();
+          }
+      }
 
 
 
@@ -77,6 +89,18 @@ public class calCulate
     }
 
 
+    // Check if the number is within the valid range (0 to 30)
+    while (thisYearInt < 0 || thisYearInt > 30)
+    {
+        Console.Write("Invalid number. Please enter a number between 0 and 30 (inclusive):");
+        thisYear = Console.ReadLine();
+        // Since the number is invalid, we need to repeat the TryParse again.
+        while (!int.TryParse(thisYear, out thisYearInt))
+        {
+            Console.Write("Sorry, that's not a number, try again:");
+            thisYear = Console.ReadLine();
+        }
+    }
 
 
 
