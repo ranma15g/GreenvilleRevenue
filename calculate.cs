@@ -27,7 +27,7 @@ public class calCulate
       return "\n" + w1 + "\n" + w12 + "\n" + w2 + "\n\n" + w3 + "\n\n" + w4 + "\n" + w5;
 
   }
-  
+
   // Create the method GetMessage to display the message for option 1
   public string GetMessage()
   {
@@ -72,7 +72,7 @@ public class calCulate
     }
 
 
-    
+
     // Create a set of strings to display the message
     string s1 = "Last year's competition had " + lastYearInt + " contestants, and this year's competition has " + thisYearInt + " contestants\n";
 
@@ -87,21 +87,27 @@ public class calCulate
     // Declare a variable to compare last year's competition against this year's competition
     string s3;
 
-    // if last year's competition is less than this yera's competition
-    if (lastYearInt < thisYearInt)
-    // then s3 is a string that messages that to the user
-    { s3 = "It is true that this year's competition is bigger than last year's.\n";}
 
-    else // if last year's competition is greater than this yera's competition
-    // then s3 is a string that messages that to the user
-    { s3 = "It is false that this year's competition is bigger than last year's.\n";}
+
+    // If the competition is bigger than last year’s but not more than twice as big
+    if ( thisYearInt > lastYearInt && thisYearInt < lastYearInt * 2 )
+      // Then we inform the user of that fact
+    { s3 = "The competition is bigger than ever! \n"; }
+
+    // If the competition has more than twice as many contestants as last year
+    else if ( thisYearInt > lastYearInt * 2 )
+      // Then we inform the user of that fact
+    { s3 = "The competition is more than twice as big this year!\n"; }
+
+    else // If the competition is smaller than last year’s
+    { s3 = " A tighter race this year! Come out and cast your vote! \n"; }
 
     // Return the strings representing the message when the user selects input 1
     return s1 + s2 + s3;
   }
 
 
-  
+
   // Create the method Ciao to display the good bye message
   public string Ciao()
   {

@@ -15,6 +15,9 @@ class Program {
       // Display the menu
       Console.WriteLine(intro);
 
+      // Ask the user to enter an option
+      Console.Write("\nPlease select your option :");
+      
       // Receive the user's input
       var choice = Console.ReadLine();
 
