@@ -29,7 +29,7 @@ class Program {
         Console.WriteLine("\n" + answer);
       }
 
-      
+
       // if the user chooses option 2
       else if (choice == "2")
       {
@@ -44,7 +44,7 @@ class Program {
         break;
       }
 
-      
+
       // if the user chooses an option that is not 1 or 2
       else
       {
