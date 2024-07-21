@@ -33,7 +33,7 @@ public class calCulate
   {
 
   // Ask the user for last year's number of contestants
-  Console.Write("Please enter last years number of contestants :");
+  Console.Write("\nPlease enter last years number of contestants :");
 
     // Receive the user's input on last year's contestants
     string lastYear = Console.ReadLine();
@@ -42,18 +42,23 @@ public class calCulate
     int lastYearInt;
 
     // While the user continues to not enter a number
-    while (int.TryParse(lastYear, out lastYearInt) == false)
+    while (!int.TryParse(lastYear, out lastYearInt))
     {
       // Display an error message
-      Console.WriteLine("Sorry, that's not a number, try again:");
+      Console.Write("Sorry, that's not a number, try again:");
 
       // Ask the user for last year's number of contestants again
       lastYear = Console.ReadLine();// Conversion successful
     }
 
 
+
+
+
+
+      
     // Ask the user for this year's number of contestants
-    Console.Write("Please enter this years number of contestants :");
+    Console.Write("\nPlease enter this years number of contestants :");
 
     // Receive the user's input on this year's contestants
     string thisYear = Console.ReadLine();
@@ -65,11 +70,13 @@ public class calCulate
     while (int.TryParse(thisYear, out thisYearInt) == false)
     {
       // Display an error message
-      Console.WriteLine("Sorry, that's not a number, try again:");
+      Console.Write("Sorry, that's not a number, try again:");
 
       // Ask the user for this year's number of contestants again
       thisYear = Console.ReadLine();// Conversion successful
     }
+
+
 
 
 
@@ -89,18 +96,20 @@ public class calCulate
 
 
 
-    // If the competition is bigger than last year’s but not more than twice as big
-    if ( thisYearInt > lastYearInt && thisYearInt < lastYearInt * 2 )
-      // Then we inform the user of that fact
-    { s3 = "The competition is bigger than ever! \n"; }
+    // If the competition is bigger than last year
+    if ( thisYearInt > lastYearInt ) 
+      { 
+        // but not more than twice as big
+        if ( thisYearInt <= lastYearInt * 2 )
+          { s3 = "The competition is bigger than ever! \n"; }
+        // or if it is more than twice as big
+        else
+          { s3 = "The competition is more than twice as big this year!\n"; }
+      }
 
-    // If the competition has more than twice as many contestants as last year
-    else if ( thisYearInt > lastYearInt * 2 )
-      // Then we inform the user of that fact
-    { s3 = "The competition is more than twice as big this year!\n"; }
-
-    else // If the competition is smaller than last year’s
-    { s3 = " A tighter race this year! Come out and cast your vote! \n"; }
+    // If the competition is not bigger than last year
+    else 
+    { s3 = "A tighter race this year! Come out and cast your vote! \n"; }
 
     // Return the strings representing the message when the user selects input 1
     return s1 + s2 + s3;
